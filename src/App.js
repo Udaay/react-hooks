@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import {ThemeProvider} from './useContext/ThemeContext'
+import FunctionComp from './useContext/FunctionComponent';
+
+import MemoComp from './useMemo/useMemoComp';
+
+import CallbackDemo from './useCallback/CallBackDemo';
+
+import Counter from './useReducer/Counter';
+import ToDoComp from './useReducer/ToDoComp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{marginLeft: '0.5rem'}}>
+    <ThemeProvider>
+      <FunctionComp/>
+    </ThemeProvider>
+    <hr/>
+    <p>useMemo Demo, Above and Below Component are separate and don't share any state between them </p>
+    <MemoComp/>
+
+    <hr/>
+    <p>useCallBack Demo, Above and Below Component are separate and don't share any state between them </p>
+    <CallbackDemo/>
+
+    <hr/>
+    <p>useReducer Demo, Above and Below Component are separate and don't share any state between them </p>
+    <Counter/>
+    <ToDoComp/>
     </div>
   );
 }
 
 export default App;
+
+
+// const [darkTheme, setDarkTheme] = useState(false);
+
+//   function toggleDarkTheme() {
+//     setDarkTheme(!darkTheme);
+//   }
+  
+//   return (
+//     <ThemeContext.Provider value= {darkTheme}>
+//     <div className="App">
+//       <button style = {{margin: '1rem', padding: '0.5rem'}} onClick={toggleDarkTheme} >Toggle Theme</button>
+//       <ClassBasedComp/>
+//       <FunctionComp/>
+//     </div>
+//     </ThemeContext.Provider>
+//   );
+// }
