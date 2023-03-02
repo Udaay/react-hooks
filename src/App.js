@@ -10,6 +10,10 @@ import CallbackDemo from './useCallback/CallBackDemo';
 import Counter from './useReducer/Counter';
 import ToDoComp from './useReducer/ToDoComp';
 
+import UseTransisitionComp from './useTransition/useTransition';
+
+import UseDeferredComp from './useDeferred/useDeferred';
+
 function App() {
   return (
     <div style={{marginLeft: '0.5rem'}}>
@@ -28,6 +32,14 @@ function App() {
     <p>useReducer Demo, Above and Below Component are separate and don't share any state between them </p>
     <Counter/>
     <ToDoComp/>
+
+    <hr/>
+    <p>useTransistion Demo, Above and Below Component are separate and don't share any state between them </p>
+    <UseTransisitionComp/>
+
+    <hr/>
+    <p>useDeferred Demo, Above and Below Component are separate and don't share any state between them </p>
+    <UseDeferredComp/>
     </div>
   );
 }
